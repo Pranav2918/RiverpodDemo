@@ -12,7 +12,7 @@ const List<Product> allProducts = [
   Product(
       discount: 8,
       id: '2',
-      title: 'Karati Kit',
+      title: 'Karate Kit',
       price: 34,
       image: 'assets/images/karati.png'),
   Product(
@@ -34,7 +34,7 @@ const List<Product> allProducts = [
       price: 29,
       image: 'assets/images/drum.png'),
   Product(
-      discount: 100,
+      discount: 10,
       id: '6',
       title: 'Blue Suitcase',
       price: 44,
