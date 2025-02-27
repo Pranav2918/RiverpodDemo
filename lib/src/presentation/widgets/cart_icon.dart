@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpoddemo/src/presentation/views/cart/cart.dart';
+import 'package:riverpoddemo/src/presentation/views/user/user_list.dart';
 import 'package:riverpoddemo/src/providers/cart_notifier.dart';
 import 'package:riverpoddemo/src/providers/prod_provider.dart';
 
@@ -13,6 +14,18 @@ class CartIcon extends ConsumerWidget {
     return Row(
       children: [
         IconButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => UserList(),
+                ));
+          },
+          icon: Icon(Icons.person),
+          tooltip: "Users",
+        ),
+        IconButton(
+            tooltip: 'Filters',
             onPressed: () {
               showDialog(
                 context: context,
@@ -35,7 +48,9 @@ class CartIcon extends ConsumerWidget {
                     ),
                     SimpleDialogOption(
                       onPressed: () {
-                        ref.read(productNotifierProvider.notifier).showDiscounted();
+                        ref
+                            .read(productNotifierProvider.notifier)
+                            .showDiscounted();
                         Navigator.pop(context);
                       },
                       child: const Text('Most discounted \$'),
@@ -51,6 +66,7 @@ class CartIcon extends ConsumerWidget {
         Stack(
           children: [
             IconButton(
+              tooltip: "Cart",
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return const CartScreen();

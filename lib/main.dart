@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpoddemo/src/presentation/views/home/home.dart';
+import 'package:riverpoddemo/src/presentation/views/user/user_list.dart';
 
 void main() {
   runApp(const MyApp());
