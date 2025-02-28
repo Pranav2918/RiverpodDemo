@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpoddemo/src/presentation/views/cart/cart.dart';
+import 'package:riverpoddemo/src/presentation/views/gallery/gallery.dart';
 import 'package:riverpoddemo/src/presentation/views/user/user_list.dart';
 import 'package:riverpoddemo/src/providers/cart_notifier.dart';
 import 'package:riverpoddemo/src/providers/prod_provider.dart';
@@ -13,6 +14,17 @@ class CartIcon extends ConsumerWidget {
     final itemCount = ref.watch(cartNotifierProvider);
     return Row(
       children: [
+        IconButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => GalleryScreen(),
+                ));
+          },
+          icon: Icon(Icons.photo),
+          tooltip: "Gallery",
+        ),
         IconButton(
           onPressed: () {
             Navigator.push(
